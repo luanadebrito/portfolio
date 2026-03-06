@@ -4,398 +4,192 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio | Luana de Brito</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+
     <style>
         :root {
-            --bg-color: #FFB6C1; /* Fundo Rosa Bebê */
-            --card-bg: #2D2D2D;
-            --text-main: #FFFFFF;
-            --accent: #FFB6C1; 
-            --accent-hover: #f08080;
-            --primary-font: 'Montserrat', sans-serif;
-            --secondary-font: 'Open Sans', sans-serif;
+            --primary: #4a69bd;
+            --secondary: #82ccdd;
+            --baby-blue: #d1f2ff;
+            --dark: #2f3542;
+            --light: #ffffff;
+            --accent: #ffb6c1; /* Rosa bebê */
         }
 
         body {
-            background-color: var(--bg-color);
-            color: #2D2D2D; /* Texto geral escuro para ler no rosa */
-            font-family: var(--secondary-font);
             margin: 0;
-            line-height: 1.6;
-            overflow-x: hidden;
+            background: var(--baby-blue);
+            font-family: 'Segoe UI', sans-serif;
+            color: var(--dark);
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 70px 20px;
+            text-align: center;
+            border-bottom: 6px solid var(--accent);
+            color: white;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 900;
+        }
+
+        .subtitle {
+            background: rgba(255, 255, 255, 0.25);
+            padding: 6px 20px;
+            display: inline-block;
+            margin-top: 10px;
+            border-radius: 40px;
+            color: var(--light);
+            font-weight: 600;
         }
 
         .container {
-            max-width: 1100px;
-            margin: 0 auto;
+            max-width: 1050px;
+            margin: auto;
             padding: 20px;
         }
 
-        header {
-            text-align: center;
-            padding: 120px 20px;
-            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), 
-                        url('https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=2000&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            border-bottom: 5px solid rgba(255, 255, 255, 0.2);
-            color: white;
-            position: relative;
-        }
-
-        .nome-principal { 
-            font-family: var(--primary-font);
-            font-size: 4rem; 
-            font-weight: 800;
-            margin: 0;
-            line-height: 1;
-            background: linear-gradient(to right, #ffffff, #FFD1DC);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-            text-shadow: 0px 5px 15px rgba(0,0,0,0.5);
-        }
-
-        .cargo-ti { 
-            font-family: var(--primary-font);
-            font-weight: 600;
-            font-size: 1.2rem; 
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            margin: 15px 0 10px 0;
-            color: #FFB6C1; /* Rosa para brilhar no fundo escuro do header */
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-        }
-
-        /* RETÂNGULO PEQUENO AJUSTADO */
-        .subtitle { 
-            font-size: 0.85rem;
-            margin-top: 10px;
-            font-weight: 400;
-            background: rgba(255, 255, 255, 0.15);
-            display: inline-block;
-            padding: 4px 18px;
-            border-radius: 50px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: #fff;
-        }
-
+        /* ABOUT CARD */
         .about {
-            background: var(--card-bg);
-            color: white;
-            padding: 35px;
-            border-radius: 24px;
-            margin: -40px auto 40px;
-            max-width: 850px;
-            border: 1px solid rgba(255,182,193, 0.3);
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            position: relative;
-            z-index: 2;
+            background: var(--light);
+            border-left: 6px solid var(--accent);
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            margin-top: -40px;
         }
 
-        .about strong { color: var(--accent); }
+        .about strong { color: var(--primary); }
 
+        /* GRID / CARDS */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
-            margin-bottom: 50px;
+            margin-top: 30px;
         }
 
         .card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 20px;
-            color: white;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background: var(--light);
+            border-radius: 18px;
+            border: 2px solid var(--secondary);
+            padding: 25px;
             text-align: center;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
         }
 
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: white;
-        }
-
-        .icon {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 20px;
-        }
-
-        h3 { 
-            font-family: var(--primary-font);
-            color: var(--accent);
-            margin-bottom: 15px;
-            font-size: 1.4rem;
+        .card i { 
+            font-size: 3rem; 
+            color: var(--primary);
+            margin-bottom: 10px;
         }
 
         .tags span {
-            background: rgba(255, 182, 193, 0.1);
-            color: var(--accent);
-            padding: 6px 14px;
+            padding: 6px 12px;
+            background: var(--baby-blue);
             border-radius: 8px;
-            font-size: 0.8rem;
-            border: 1px solid var(--accent);
-            font-weight: 600;
+            border: 1px solid var(--primary);
+            color: var(--primary);
             margin: 4px;
             display: inline-block;
-        }
-
-        .whatsapp-link {
-            text-decoration: none;
-            color: white;
-            background: #25D366;
-            padding: 12px 25px;
-            border-radius: 12px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
+            font-size: 0.85rem;
             font-weight: 600;
         }
 
-        footer {
-            text-align: center;
-            padding: 60px 0;
-            color: #2D2D2D; /* Texto escuro no fundo rosa */
-            font-weight: 600;
-        }
-
-        .social-links a { 
-            color: #2D2D2D; 
-            margin: 0 15px; 
-            font-size: 1.8rem; 
-        }
-
-        @media (max-width: 600px) {
-            .nome-principal { font-size: 2.5rem; }
-            header { padding: 80px 20px; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="container">
-            <div class="nome-principal">Luana de Brito</div>
-            <h1 class="cargo-ti">Profissional de TI</h1>
-            <p class="subtitle">Especialista em Infraestrutura & Redes</p>
-        </div>
-    </header>
-
-    <main class="container">
-        <section class="about">
-            <p>Profissional com mais de <strong>5 anos de experiência</strong> em <strong>Datacenter</strong>, suporte a ambientes críticos e <strong> segurança da informação.</strong> </p>
-        </section>
-
-        <div class="grid">
-            <div class="card">
-                <i class="fas fa-user-graduate icon"></i>
-                <h3>Formação</h3>
-                <p>Graduada em Redes de Computadores pela <strong>FATEC Bauru</strong> e Técnica em TI pela <strong>ETEC</strong>.</p>
-            </div>
-
-            <div class="card">
-                <i class="fas fa-server icon"></i>
-                <h3>Infraestrutura</h3>
-                <div class="tags">
-                    <span>Windows & Linux</span>
-                    <span>Criação de Sites</span>
-                    <span>Virtualização</span>
-                    <span>Cloud</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <i class="fas fa-code icon"></i>
-                <h3>Desenvolvimento Web</h3>
-                <p>Criação de sites modernos e responsivos.</p>
-            
-            </div>
-
-            <div class="card">
-                <i class="fas fa-envelope icon"></i>
-                <h3>Contato</h3>
-                <p>Bauru-SP e projetos remotos.</p>
-                <a href="https://wa.me/5514996550883" target="_blank" class="whatsapp-link">
-                    <i class="fab fa-whatsapp"></i> (14) 99655-0883
-                </a>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-        </div>
-        <p>&copy; 2026 • Luana de Brito • Bauru-SP</p>
-    </footer>
-
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conexão Literária & Game Center</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #4a69bd; /* Azul mais profundo para botões */
-            --secondary: #82ccdd; /* Azul médio */
-            --baby-blue: #d1f2ff; /* Fundo Azul BB solicitado */
-            --dark: #2f3542;
-            --light: #ffffff;
-            --accent: #fbc531; /* Amarelo para destaque */
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            background-color: var(--baby-blue); /* Fundo Azul BB aplicado aqui */
-            color: var(--dark);
-            line-height: 1.6;
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 50px 20px;
-            text-align: center;
-            border-bottom: 5px solid var(--accent);
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .hero-icons {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
-        }
-
-        .hero-icons i {
-            margin: 0 20px;
-            color: var(--baby-blue);
-        }
-
-        section {
-            padding: 30px 0;
-        }
-
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 20px;
-            border: 2px solid var(--secondary);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-
-        .card i {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
+        /* INFO BOX */
         .info-box {
             background: var(--light);
-            border-left: 8px solid var(--primary);
             padding: 30px;
-            border-radius: 10px;
-            margin-top: 20px;
+            border-radius: 12px;
+            border-left: 7px solid var(--primary);
+            margin-top: 40px;
         }
 
+        /* FOOTER */
         footer {
             background: var(--dark);
             color: white;
             text-align: center;
-            padding: 30px;
+            padding: 30px 10px;
             margin-top: 50px;
-        }
-
-        h1, h2, h3 {
-            font-weight: 800;
         }
     </style>
 </head>
+
 <body>
 
-    <header>
-        <div class="hero-icons">
-            <i class="fas fa-book"></i>
-            <i class="fas fa-gamepad"></i>
+<!-- HEADER -->
+<header>
+    <h1>Luana de Brito</h1>
+    <p class="subtitle">Profissional de TI • Infraestrutura e Redes</p>
+</header>
+
+<!-- SOBRE -->
+<div class="container">
+    <section class="about">
+        <p>
+            Profissional com mais de <strong>5 anos de experiência</strong> em 
+            ambientes críticos, suporte a Datacenter e 
+            <strong>Segurança da Informação</strong>. 
+        </p>
+        <p>
+            Formação em <strong>Redes de Computadores – FATEC Bauru</strong> e 
+            Técnica em TI pela <strong>ETEC</strong>.
+        </p>
+    </section>
+
+    <!-- CARDS -->
+    <section class="grid">
+
+        <div class="card">
+            <i class="fas fa-user-graduate"></i>
+            <h3>Formação</h3>
+            <p>Redes de Computadores – FATEC<br>Técnica em Informática – ETEC</p>
         </div>
-        <h1>Conexão Literária & Game Center</h1>
-        <p>Inovação, Educação e Gamificação em Bauru</p>
-    </header>
 
-    <div class="container">
-        
-        <section>
-            <div class="card-grid">
-                <div class="card">
-                    <i class="fas fa-library"></i>
-                    <h3>Biblioteca Viva</h3>
-                    <p>Acervo curado para incentivar a imaginação e o foco nas mesas redondas de leitura.</p>
-                </div>
-
-                <div class="card">
-                    <i class="fas fa-headset"></i>
-                    <h3>Arena Gamer</h3>
-                    <p>10 Estações PS4 configuradas para diversão segura e cooperativa em duplas.</p>
-                </div>
-
-                <div class="card">
-                    <i class="fas fa-user-graduate"></i>
-                    <h3>Espaço do Aluno</h3>
-                    <p>Notebooks de alta performance e impressoras para apoio escolar total.</p>
-                </div>
+        <div class="card">
+            <i class="fas fa-server"></i>
+            <h3>Infraestrutura</h3>
+            <div class="tags">
+                <span>Windows & Linux</span>
+                <span>Cloud</span>
+                <span>Virtualização</span>
+                <span>Criação de Sites</span>
             </div>
-        </section>
+        </div>
 
-        <section class="info-box">
-            <h2>Compromisso com Bauru</h2>
-            <p>Como Microempreendedora Individual (MEI) residente em Bauru, este projeto assume o dever de:</p>
-            <ul>
-                <li>Oferecer monitoria técnica especializada das 17h às 21h.</li>
-                <li>Garantir o uso ético da internet e a segurança digital das crianças.</li>
-                <li>Promover a inclusão digital através de equipamentos de ponta para a comunidade.</li>
-                <li>Zelar integralmente pelo patrimônio tecnológico adquirido via edital.</li>
-            </ul>
-        </section>
+        <div class="card">
+            <i class="fas fa-code"></i>
+            <h3>Desenvolvimento Web</h3>
+            <p>Criação de sites modernos, rápidos e responsivos.</p>
+        </div>
 
-    </div>
+    </section>
 
-    <footer>
-        <p>Responsável Técnica: Luana de Brito (LUBENNET)</p>
-        <p>CNPJ: 64.516.956/0001-23 | Bauru - SP</p>
-    </footer>
+    <!-- PROJETO -->
+    <section class="info-box">
+        <h2>Projeto: Conexão Literária & Game Center</h2>
+        <p>Como Microempreendedora Individual (MEI) em Bauru, o projeto oferece:</p>
+        <ul>
+            <li>Monitoria técnica especializada das 17h às 21h.</li>
+            <li>Uso ético e seguro da internet.</li>
+            <li>Inclusão digital com equipamentos de ponta.</li>
+            <li>Zelo total pelo patrimônio tecnológico concedido pelo edital.</li>
+        </ul>
+    </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>Responsável Técnica: Luana de Brito (LUBENNET)</p>
+    <p>CNPJ: 64.516.956/0001-23 • Bauru - SP</p>
+</footer>
 
 </body>
 </html>
-
-
-
-
-
