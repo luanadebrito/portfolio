@@ -46,17 +46,26 @@
             position: relative;
         }
 
-        .nome-principal { 
-            font-family: var(--primary-font);
-            font-size: 4rem; 
-            font-weight: 800;
-            margin: 0;
-            line-height: 1;
-            background: linear-gradient(to right, #ffffff, #FFD1DC);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-            text-shadow: 0px 5px 15px rgba(0,0,0,0.5);
+       .nome-principal {
+  font-family: var(--primary-font);
+  font-size: 4rem;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1;
+
+  background: linear-gradient(
+  to right,
+  #ffffff 0%,
+  #FF9BB5 50%,
+  #FF006A 100%
+);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 
+      0 5px 18px rgba(0,0,0,0.45),
+      0 1px 0 rgba(0,0,0,0.15);
+}
         }
 
         .cargo-ti { 
@@ -389,6 +398,7 @@
 
 </body>
 </html>
+
 
 
 
