@@ -1,141 +1,188 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conexão Literária & Game Center</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio | Luana de Brito + Conexão Literária & Game Center</title>
+
+    <!-- Fontes e ícones globais -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
     <style>
+        /* ==========================================================
+           1) ESTILOS DO PORTFÓLIO | LUANA DE BRITO (ORIGINAL, SEM ALTERAÇÃO)
+           ========================================================== */
         :root {
-            --primary: #4a69bd;      /* Mantido, pois você NÃO pediu para trocar */
-            --secondary: #FFB6C1;    /* Antes: azul médio => Agora: rosa bebê */
-            --baby-blue: #FFB6C1;    /* Antes: azul BB => Agora: rosa bebê */
-            --dark: #2f3542;
-            --light: #ffffff;
-            --accent: #FFB6C1;       /* Antes: amarelo => Agora: rosa */
+            --bg-color: #FFB6C1; /* Fundo Rosa Bebê */
+            --card-bg: #2D2D2D;
+            --text-main: #FFFFFF;
+            --accent: #FFB6C1; 
+            --accent-hover: #f08080;
+            --primary-font: 'Montserrat', sans-serif;
+            --secondary-font: 'Open Sans', sans-serif;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: #2D2D2D; /* Texto geral escuro para ler no rosa */
+            font-family: var(--secondary-font);
             margin: 0;
-            background-color: var(--baby-blue);
-            color: var(--dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 50px 20px;
-            text-align: center;
-            border-bottom: 5px solid var(--accent);
+        /* Navegação simples entre as seções (opcional) */
+        .top-nav {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: rgba(255, 182, 193, 0.9);
+            backdrop-filter: blur(6px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
+        .top-nav .nav-wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 8px 16px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            justify-content: flex-start;
+            font-weight: 600;
+        }
+        .top-nav a {
+            color: #2D2D2D;
+            text-decoration: none;
+            background: white;
+            padding: 8px 14px;
+            border-radius: 10px;
+            border: 1px solid rgba(0,0,0,0.08);
+        }
+        .top-nav a:hover { background: #fff3f6; }
 
+        /* ======= Seção 1: Portfólio ======= */
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        .hero-icons {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
+        header.portfolio-header {
+            text-align: center;
+            padding: 120px 20px;
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), 
+                        url('https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            border-bottom: 5px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            position: relative;
         }
 
-        .hero-icons i {
-            margin: 0 20px;
-            color: var(--baby-blue);
+        .nome-principal { 
+            font-family: var(--primary-font);
+            font-size: 4rem; 
+            font-weight: 800;
+            margin: 0;
+            line-height: 1;
+            background: linear-gradient(to right, #ffffff, #FFD1DC);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            text-shadow: 0px 5px 15px rgba(0,0,0,0.5);
         }
 
-        section {
-            padding: 30px 0;
+        .cargo-ti { 
+            font-family: var(--primary-font);
+            font-weight: 600;
+            font-size: 1.2rem; 
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin: 15px 0 10px 0;
+            color: #FFB6C1; /* Rosa para brilhar no fundo escuro do header */
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
         }
 
-        .card-grid {
+        /* RETÂNGULO PEQUENO AJUSTADO */
+        .subtitle { 
+            font-size: 0.85rem;
+            margin-top: 10px;
+            font-weight: 400;
+            background: rgba(255, 255, 255, 0.15);
+            display: inline-block;
+            padding: 4px 18px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+        }
+
+        .about {
+            background: var(--card-bg);
+            color: white;
+            padding: 35px;
+            border-radius: 24px;
+            margin: -40px auto 40px;
+            max-width: 850px;
+            border: 1px solid rgba(255,182,193, 0.3);
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .about strong { color: var(--accent); }
+
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
         }
 
         .card {
-            background: white;
-            padding: 25px;
+            background: var(--card-bg);
+            padding: 30px;
             border-radius: 20px;
-            border: 2px solid var(--secondary);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-
-        .card i {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        .info-box {
-            background: var(--light);
-            border-left: 8px solid var(--primary);
-            padding: 30px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-
-        footer {
-            background: var(--dark);
             color: white;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            padding: 30px;
-            margin-top: 50px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
         }
 
-        h1, h2, h3 {
-            font-weight: 800;
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: white;
         }
-    </style>
-</head>
-<body>
 
-    <header>
-        <div class="hero-icons">
-            <i class="fas fa-book"></i>
-            <i class="fas fa-gamepad"></i>
-        </div>
-        <h1>Conexão Literária & Game Center</h1>
-        <p>Inovação, Educação e Gamificação em Bauru</p>
-    </header>
+        .icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
 
-    <div class="container">
-        
-        <section>
-            <div class="card-grid">
-                <div class="card">
-                    <i class="fas fa-library"></i>
-                    <h3>Biblioteca Viva</h3>
-                    <p>Acervo curado para incentivar a imaginação e o foco nas mesas redondas de leitura.</p>
-                </div>
+        h3 { 
+            font-family: var(--primary-font);
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
 
-                <div class="card">
-                    <i class="fas fa-headset"></i>
-                    <h3>Arena Gamer</h3>
-                </div>
-            </div>
-        </section>
+        .tags span {
+            background: rgba(255, 182, 193, 0.1);
+            color: var(--accent);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            border: 1px solid var(--accent);
+            font-weight: 600;
+            margin: 4px;
+            display: inline-block;
+        }
 
-        <section class="info-box">
-            <ul>
-                <li>Monitoria técnica especializada.</li>
-                <li>Garantir o uso ético da internet e a segurança digital.</li>
-                <li>Promover a inclusão digital através de equipamentos de ponta para a comunidade.</li>
-                <li>Zelar integralmente pelo patrimônio tecnológico.</li>
-            </ul>
-        </section>
-
-    </div>
-
-    <footer>
-        <p>Responsável Técnica: Luana de Brito (LUBENNET)</p>
-        <p>| Bauru - SP</p>
-    </footer>
-
-</body>
-</html>
