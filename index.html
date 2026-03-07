@@ -191,7 +191,16 @@
             .nome-principal { font-size: 2.5rem; }
             header { padding: 80px 20px; }
             /* mesma cor para TODOS os títulos dos cards */
-/* --- PORTFÓLIO: ajustes de cor nos cards --- */
+/* Portfólio: deixar o parágrafo dos cards legível no fundo branco */
+main.container .grid .card {
+  background: #ffffff; /* garante card branco */
+}
+
+main.container .grid .card p,
+main.container .grid .card p strong,
+main.container .grid .card a {
+  color: #2D2D2D !important; /* texto escuro e legível */
+}
 
 /* 1) Título dos cards (mesma cor dos outros) */
 .grid .card h3 {
@@ -410,6 +419,7 @@
 
 </body>
 </html>
+
 
 
 
